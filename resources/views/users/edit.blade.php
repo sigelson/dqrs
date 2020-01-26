@@ -44,7 +44,8 @@
                                         </span>
                                     @endif
                                 </div>
-
+                                @if(Auth::user()->role=='SA')
+                                <label class="form-control-label" for="input-role">{{ __('Account Role') }}</label>
                                 <div class="form-group">
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="role" id="userradio" value="U" class="sr-only" required>
@@ -58,8 +59,25 @@
                                          Admin Account
                                         </label>
                                       </div>
-                            </div>
-
+                                </div>
+                                @endif
+                                @if(Auth::user()->role=='A')
+                                <label class="form-control-label" for="input-role">{{ __('Account Role') }}</label>
+                                <div class="form-group">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="role" id="userradio" value="U" class="sr-only"  active required>
+                                        <label class="form-check-label" for="userradio1">
+                                          User Account
+                                        </label>
+                                      </div>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="role" id="adminradio" value="A" class="sr-only" disabled>
+                                        <label class="form-check-label" for="adminradio2">
+                                         Admin Account
+                                        </label>
+                                      </div>
+                                </div>
+                                @endif
 
                                 <div class="form-group{{ $errors->has('password') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-password">{{ __('Password') }}</label>

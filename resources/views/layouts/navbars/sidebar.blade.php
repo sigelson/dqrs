@@ -96,7 +96,7 @@
                                     {{ __('User profile') }}
                                 </a>
                             </li>
-                            @if(\Auth::user()->id==1)
+                            @if(Auth::user()->role=='SA')
                             <li class="nav-item">
                                 <a class="nav-link text-dark" href="{{ route('user.index') }}">
                                     {{ __('User Management') }}
@@ -112,7 +112,7 @@
                         <i class="ni ni-planet text-blue"></i> {{ __('Icons') }}
                     </a>
                 </li> --}}
-                @if(\Auth::user()->id==1)
+                @if(Auth::user()->role =='SA')
                 <li class="nav-item">
                     <a class="nav-link text-dark" href="#">
                         <strong><i class="far fa-building"></i>
@@ -125,12 +125,12 @@
                         {{ __('Counters') }}</strong>
                     </a>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link text-dark" href="#"><strong>
                         <i class="fas fa-cog"></i>
                         {{ __('Settings') }}</strong>
                     </a>
-                </li>
+                </li> --}}
                 @endif
                 {{-- <li class="nav-item">
                     <a class="nav-link" href="#">
